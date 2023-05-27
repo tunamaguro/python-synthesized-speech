@@ -6,7 +6,7 @@ https://github.com/r9y9/ttslearn
 そのまま利用する場合は以下のコマンドを実行してから`DevContainer`を起動してください。
 
 ```bash
-docker build -t ml-template:0.0.0
+docker build . -t tts-learn:0.0.0
 ```
 
 そうでない場合は、`compose.yaml`をよしなに書き換えることで使用できると思います。

@@ -1,4 +1,4 @@
-FROM  nvidia/cuda:11.7.0-cudnn8-devel-ubuntu20.04
+FROM  pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
 ENV TZ=Asia/Tokyo
 ENV DEBIAN_FRONTEND=noninteractive=value
@@ -12,9 +12,11 @@ RUN apt-get update \
     unzip \
     # ffmpeg \
     sudo \
-    python3-tk \
-    python3 \
-    python3-pip
+    # python3-pip \
+    # for ttslearn
+    build-essential \
+    libsamplerate0 \
+    libsndfile1 
 
 COPY ./requirements.txt /tmp/requirements.txt
 

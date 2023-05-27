@@ -10,7 +10,6 @@ torchvision
 torchaudio
 torchinfo
 pytorch-lightning
-  
 
 # jupyterlab
 jupyterlab
@@ -25,3 +24,7 @@ polars
 black
 flake8
 isort
+
+# ttslearn
+ttslearn
+cmake

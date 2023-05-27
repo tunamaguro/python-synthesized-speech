@@ -1,6 +1,6 @@
 services:
   dev:
-    image: ml-template:0.0.0
+    image: tts-learn:0.0.0
     command: sleep infinity
     volumes:
       - type: bind
