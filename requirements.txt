@@ -16,9 +16,10 @@ jupyterlab
 ipywidgets
 
 # utilities
-pandas
+# pandas
 numpy
 polars
+scipy
 
 # formatter
 black
@@ -28,3 +29,4 @@ isort
 # ttslearn
 ttslearn
 cmake
+cython

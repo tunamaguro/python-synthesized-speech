@@ -1,4 +1,4 @@
-FROM  pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
+FROM  nvidia/cuda:11.7.0-cudnn8-runtime-ubuntu22.04
 
 ENV TZ=Asia/Tokyo
 ENV DEBIAN_FRONTEND=noninteractive=value
@@ -12,17 +12,21 @@ RUN apt-get update \
     unzip \
     # ffmpeg \
     sudo \
-    # python3-pip \
+    python3 \
+    python3-pip \
     # for ttslearn
     build-essential \
+    cmake \
+    clang \
+    libssl-dev \
+    gcc \
+    g++ \
     libsamplerate0 \
-    libsndfile1 
+    libsndfile1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY ./requirements.txt /tmp/requirements.txt
-
-# Install libralies
-RUN pip3 install --no-cache-dir --upgrade pip setuptools \
-    && pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 # Set non root user
 ARG USERNAME=vscode
@@ -36,3 +40,8 @@ RUN groupadd -g $GID $GROUPNAME && \
     echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USERNAME
 WORKDIR /home/$USERNAME/workspaces
+
+# Install libralies
+RUN pip install --no-cache-dir --upgrade pip setuptools cmake \
+    && pip install --no-cache-dir -r /tmp/requirements.txt
+
