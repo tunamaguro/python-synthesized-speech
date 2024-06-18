@@ -11,15 +11,18 @@
             "settings": {
                 "[python]": {
                     "editor.formatOnSave": true,
-                },
-                "editor.codeActionsOnSave": {
-                    "source.organizeImports": true
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll": "explicit",
+                        "source.organizeImports": "explicit"
+                    },
+                    "editor.defaultFormatter": "charliermarsh.ruff"
                 }
             },
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "ms-python.python",
                 "ms-toolsai.jupyter",
+                "charliermarsh.ruff",
                 "mosapride.zenkaku",
                 "streetsidesoftware.code-spell-checker",
                 "mhutchie.git-graph"
