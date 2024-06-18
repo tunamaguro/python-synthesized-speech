@@ -15,8 +15,9 @@
                         "source.fixAll": "explicit",
                         "source.organizeImports": "explicit"
                     },
-                    "editor.defaultFormatter": "charliermarsh.ruff"
-                }
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                },
+                "notebook.lineNumbers": "on"
             },
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
