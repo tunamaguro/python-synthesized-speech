@@ -1,33 +1,8 @@
-FROM  nvcr.io/nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-runtime
 
-ENV TZ=Asia/Tokyo
-ENV DEBIAN_FRONTEND=noninteractive=value
+RUN apt-get update && apt-get install -y curl git build-essential libsamplerate0 libsndfile1 && apt-get clean
 
-# Install dependencies
-RUN apt-get update \
-    && apt-get install -y \
-    wget \
-    git \
-    curl \
-    unzip \
-    # ffmpeg \
-    sudo \
-    python3 \
-    python3-pip \
-    # for ttslearn
-    build-essential \
-    cmake \
-    clang \
-    libssl-dev \
-    gcc \
-    g++ \
-    libsamplerate0 \
-    libsndfile1 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# COPY ./requirements.txt /tmp/requirements.txt
-
+# ここからは筆者が追記しました
 # Set non root user
 ARG USERNAME=vscode
 ARG GROUPNAME=vscode
@@ -41,7 +16,9 @@ RUN groupadd -g $GID $GROUPNAME && \
 USER $USERNAME
 WORKDIR /home/$USERNAME/workspaces
 
+
 # Install libralies
-# RUN pip3 install --no-cache-dir --upgrade pip setuptools cmake \
-#     && pip3 install --no-cache-dir -r /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip setuptools cmake wheel
+ADD requirements.txt /home/$USERNAME/workspaces/requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 

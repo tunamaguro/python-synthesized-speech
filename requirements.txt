@@ -1,0 +1,12 @@
+# イメージに入っているPythonが3.7のため
+parallel-wavegan==0.5.5
+
+# jupyterlab
+jupyterlab
+ipywidgets
+
+ttslearn
+streamlit
+stqdm
+
+numpy>=1.20.0

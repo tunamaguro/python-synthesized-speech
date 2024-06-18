@@ -14,15 +14,15 @@
                 },
                 "editor.codeActionsOnSave": {
                     "source.organizeImports": true
-                },
-                "terminal.integrated.cwd": "./workspaces"
+                }
             },
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
                 "ms-python.python",
                 "ms-toolsai.jupyter",
                 "mosapride.zenkaku",
-                "streetsidesoftware.code-spell-checker"
+                "streetsidesoftware.code-spell-checker",
+                "mhutchie.git-graph"
             ]
         }
     },
