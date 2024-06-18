@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-runtime
 
-RUN apt-get update && apt-get install -y curl git build-essential libsamplerate0 libsndfile1 && apt-get clean
+RUN apt-get update && apt-get install -y curl git build-essential libsamplerate0 libsndfile1 sudo unzip && apt-get clean
 
 # ここからは筆者が追記しました
 # Set non root user
