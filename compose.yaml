@@ -1,6 +1,7 @@
 services:
   dev:
-    image: tts-learn:0.0.0
+    build:
+      context: .
     command: sleep infinity
     volumes:
       - type: bind

@@ -12,10 +12,6 @@
                 "[python]": {
                     "editor.formatOnSave": true,
                 },
-                "python.linting.lintOnSave": true,
-                "python.linting.pylintEnabled": false,
-                "python.linting.flake8Enabled": true,
-                "python.formatting.provider": "black",
                 "editor.codeActionsOnSave": {
                     "source.organizeImports": true
                 },
@@ -25,8 +21,6 @@
             "extensions": [
                 "ms-python.python",
                 "ms-toolsai.jupyter",
-                "ms-python.isort",
-                "ms-python.flake8",
                 "mosapride.zenkaku",
                 "streetsidesoftware.code-spell-checker"
             ]

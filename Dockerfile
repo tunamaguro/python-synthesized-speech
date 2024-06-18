@@ -1,4 +1,4 @@
-FROM  nvidia/cuda:11.7.0-cudnn8-runtime-ubuntu22.04
+FROM  nvcr.io/nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
 
 ENV TZ=Asia/Tokyo
 ENV DEBIAN_FRONTEND=noninteractive=value
@@ -26,7 +26,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./requirements.txt /tmp/requirements.txt
+# COPY ./requirements.txt /tmp/requirements.txt
 
 # Set non root user
 ARG USERNAME=vscode
@@ -42,6 +42,6 @@ USER $USERNAME
 WORKDIR /home/$USERNAME/workspaces
 
 # Install libralies
-RUN pip install --no-cache-dir --upgrade pip setuptools cmake \
-    && pip install --no-cache-dir -r /tmp/requirements.txt
+# RUN pip3 install --no-cache-dir --upgrade pip setuptools cmake \
+#     && pip3 install --no-cache-dir -r /tmp/requirements.txt
 
