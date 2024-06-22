@@ -16,7 +16,7 @@ mu: 255
 # NOTE: benchmarkをtrueにすると、高速化が期待できる分、より多くの
 # GPUリソースを必要とする場合があります。
 # GPUリソースに余裕がある場合は、true にしてください。
-cudnn_benchmark: false
+cudnn_benchmark: true
 cudnn_deterministic: false
 
 ###########################################################
@@ -27,7 +27,7 @@ cudnn_deterministic: false
 wav_root: "downloads/jsut_ver1.1/basic5000/wav"
 lab_root: "downloads/jsut-label/labels/basic5000"
 
-n_jobs: 4
+n_jobs: 20
 
 ###########################################################
 #                FEATURE EXTRACTION SETTING               #
@@ -56,7 +56,7 @@ wavenet_train_max_train_steps: 500000
 # 注意: 必要なGPUメモリ（目安）:
 # バッチサイズ8の場合に10GB程度、バッチサイズ16の場合に17GB程度
 # PyTorch 1.8.1, CUDA 11.2, cuDNN 7.6.3
-wavenet_data_batch_size: 16
+wavenet_data_batch_size: 12
 
 ###########################################################
 #                SYNTHESIS SETTING                        #
